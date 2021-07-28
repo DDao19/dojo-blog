@@ -24,6 +24,7 @@ body {
 }
 .navbar h1 {
   color: var(--pink);
+  font-size: 1.8rem;
 }
 .navbar .links {
   margin-left: auto;
@@ -49,4 +50,22 @@ body {
   max-width: 600px;
   margin: 40px auto;
   padding: 20px;
+}
+
+/* Blog Section */
+.blog-preview {
+  background-color: white;
+  padding: 15px 26px;
+  margin: 20px 0;
+  border-bottom: 1px solid var(--gray);
+  border-radius: 25px;
+}
+.blog-preview:hover {
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.blog-preview h2 {
+  font-size: 20px;
+  color: var(--pink);
+  margin-bottom: 8px;
 }
