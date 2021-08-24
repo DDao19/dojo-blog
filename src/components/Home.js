@@ -2,49 +2,42 @@ import { useState, useEffect } from "react";
 import BlogList from "./BlogList";
 
 const Home = () => {
-  const [blogs, setBlogs] = useState([
-    {
-      title: "My new website",
-      body: "This is my first new website!",
-      author: "Mario",
-      id: 1,
-    },
-    {
-      title: "Welcome party!",
-      body: "Welcome to the official party!",
-      author: "Lisa",
-      id: 2,
-    },
-    {
-      title: "Web dev top tips",
-      body: "To learn more tips, visit....",
-      author: "Lisa",
-      id: 3,
-    },
-  ]);
-  const [name, setName] = useState("Maria");
-
-  // Deletes blog
-  const handleDelete = (id) => {
-    const newBlogs = blogs.filter((blog) => blog.id !== id);
-    setBlogs(newBlogs);
-  };
+  const [blogs, setBlogs] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    console.log("UseEffect Ran!");
-    console.log(name);
-  }, [name]);
+    fetch("http://localhost:8000/blogs")
+      .then((res) => {
+        if (!res.ok) {
+          throw Error("Could not fetch data for that resource");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setBlogs(data);
+        setIsLoading(false);
+        setError(null);
+      })
+      .catch((err) => {
+        setIsLoading(false);
+        setError(err.message);
+      });
+  }, []);
 
   return (
     <div className="home">
-      <BlogList
-        blogs={blogs}
-        blogTitle="All Blogs"
-        handleDelete={handleDelete}
-      />
-
-      <button onClick={() => setName("Luigi")}>Change Name</button>
-      <p>{name}</p>
+      {error && (
+        <div>
+          <h2>{error}</h2>
+        </div>
+      )}
+      {isLoading && (
+        <div>
+          <h2>Loading...</h2>
+        </div>
+      )}
+      {blogs && <BlogList blogs={blogs} blogTitle="All Blogs" />}
     </div>
   );
 };
