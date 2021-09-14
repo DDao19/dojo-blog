@@ -11,24 +11,6 @@
       "body": "Why do we use it? \nIt is a long establushed fact that a reader will be distracted.",
       "author": "yoshi",
       "id": 2
-    },
-    {
-      "title": "New Hires",
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies urna id lectus vehicula luctus. Proin at dapibus eros, eu finibus ipsum. Nullam accumsan, sem ut porta faucibus, elit tortor venenatis elit, a finibus ante tellus ut neque. Donec feugiat mollis velit, ac scelerisque ex scelerisque non. Suspendisse ut imperdiet felis.",
-      "author": "mario",
-      "id": 3
-    },
-    {
-      "title": "Anime Watch",
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies urna id lectus vehicula luctus. Proin at dapibus eros, eu finibus ipsum. Nullam accumsan, sem ut porta faucibus, elit tortor venenatis elit, a finibus ante tellus ut neque. Donec feugiat mollis velit, ac scelerisque ex scelerisque non. Suspendisse ut imperdiet felis.",
-      "author": "yoshi",
-      "id": 4
-    },
-    {
-      "title": "Test History",
-      "body": "Added useHistory to redirect to homepage after adding a new blog",
-      "author": "mario",
-      "id": 5
     }
   ]
 }
